@@ -12,6 +12,29 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'BioFolio - The Only Link You Need',
   description: 'Transform your scattered digital presence into a cohesive, high-converting landing page.',
+  metadataBase: new URL('https://biofolio.link'),
+  openGraph: {
+    title: 'BioFolio - The Only Link You Need',
+    description: 'Transform your scattered digital presence into a cohesive, high-converting landing page.',
+    url: 'https://biofolio.link',
+    siteName: 'BioFolio',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'BioFolio - The Only Link You Need',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BioFolio - The Only Link You Need',
+    description: 'Transform your scattered digital presence into a cohesive, high-converting landing page.',
+    images: ['/og-image.png'],
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
