@@ -142,6 +142,7 @@ export default function DashboardPage() {
     profileImage: null
   })
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const tabsRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
 
   // Load user data and profile from database
@@ -451,27 +452,39 @@ export default function DashboardPage() {
           <div className="lg:col-span-7 flex flex-col gap-6">
             
             {/* Secondary Tabs */}
-            <div className="flex items-center border-b border-white/10">
+            <div ref={tabsRef} className="flex items-center border-b border-white/10 sticky top-0 bg-[#050505] z-10">
               <button 
-                onClick={() => setActiveTab('profile')}
+                onClick={() => {
+                  setActiveTab('profile')
+                  tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'profile' ? 'text-white border-b-2 border-green-500 font-semibold' : 'text-gray-500 hover:text-white'}`}
               >
                 Profile
               </button>
               <button 
-                onClick={() => setActiveTab('links')}
+                onClick={() => {
+                  setActiveTab('links')
+                  tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'links' ? 'text-white border-b-2 border-green-500 font-semibold' : 'text-gray-500 hover:text-white'}`}
               >
                 My links
               </button>
               <button 
-                onClick={() => setActiveTab('icons')}
+                onClick={() => {
+                  setActiveTab('icons')
+                  tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'icons' ? 'text-white border-b-2 border-green-500 font-semibold' : 'text-gray-500 hover:text-white'}`}
               >
                 Icons
               </button>
               <button 
-                onClick={() => setActiveTab('videos')}
+                onClick={() => {
+                  setActiveTab('videos')
+                  tabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }}
                 className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'videos' ? 'text-white border-b-2 border-green-500 font-semibold' : 'text-gray-500 hover:text-white'}`}
               >
                 Featured Videos
