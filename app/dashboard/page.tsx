@@ -907,7 +907,6 @@ export default function DashboardPage() {
                     <h3 className="font-bold text-lg text-white leading-tight">
                       {profile.displayName || `@${userData?.username}`}
                     </h3>
-                    <p className="text-xs text-gray-500 font-medium mt-1">0 Followers</p>
                     
                     {profile.bio ? (
                       <p className="mt-4 text-xs text-gray-400 leading-relaxed max-w-[200px] mx-auto">
